@@ -1,0 +1,4 @@
+[
+  { "name": "pageOne", "entry": "src/pages/pageOne/index.ts", "html": "src/pages/pageOne/index.html", "description": "页面1" },
+  { "name": "pageTwo", "entry": "src/pages/pageTwo/index.ts", "html": "src/pages/pageTwo/index.html", "description": "页面2" }
+]
