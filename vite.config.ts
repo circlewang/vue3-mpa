@@ -45,7 +45,7 @@ export default ({ mode }: ConfigEnv): UserConfigExport => {
         dirs: ['src/components/', 'src/pages'],
         extensions: ['vue', 'md'],
         include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
-        dts: '../components.d.ts'
+        dts: path.resolve(__dirname, './src/components.d.ts')
       }),
       AutoImport({
         include: [
@@ -71,13 +71,6 @@ export default ({ mode }: ConfigEnv): UserConfigExport => {
         ext: '.gz', // 压缩文件格式
         deleteOriginFile: false // 是否删除源文件
       })
-      // br格式
-      // compression({
-      //   threshold: 1024 * 500,    // 体积大于 threshold 才会被压缩,单位 b
-      //   ext: '.br',
-      //   algorithm: 'brotliCompress',
-      //   deleteOriginFile: false
-      // })
     ],
     resolve: {
       alias: {
