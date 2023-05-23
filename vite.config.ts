@@ -36,8 +36,7 @@ const getEnterPages = (p) => {
 export default ({ mode }: ConfigEnv): UserConfigExport => {
   const env = loadEnv(mode, process.cwd())
   return {
-    // root: './src/pages/',
-    root: process.cwd(),
+    root: './src/pages/',
     base: env.VITE_BASE_PATH,
     envDir: path.resolve(__dirname), //用于加载 .env 文件的目录。可以是一个绝对路径，也可以是相对于项目根的路径。
     plugins: [
