@@ -1,6 +1,6 @@
 {
   "name": "vue3-mpa",
-  "private": false,
+  "private": true,
   "version": "0.0.1",
   "type": "module",
   "scripts": {
@@ -9,9 +9,6 @@
     "preview": "vite preview",
     "new:page": "node ./scripts/index.mjs",
     "lint:stylelint": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/"
-  },
-  "bin": {
-    "demo": "bin/index.js"
   },
   "dependencies": {
     "axios": "^1.4.0",
