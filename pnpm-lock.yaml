@@ -14,7 +14,7 @@ dependencies:
     specifier: ^3.15.0
     version: registry.npmmirror.com/vconsole@3.15.0
   vue:
-    specifier: ^3.2.47
+    specifier: ^3.3.4
     version: registry.npmmirror.com/vue@3.3.4
   vue-router:
     specifier: ^4.0.13
