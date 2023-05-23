@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "vite --mode test",
+    "dev": "vite dev",
+    "test":"vite --mode test",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
     "new:page": "node ./scripts/index.mjs",
