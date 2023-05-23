@@ -34,7 +34,7 @@ const getEnterPages = (p) => {
 
 // https://vitejs.dev/config/
 export default ({ mode }: ConfigEnv): UserConfigExport => {
-  const env = loadEnv(mode || 'test', process.cwd())
+  const env = loadEnv(mode, process.cwd())
   return {
     root: './src/pages/',
     base: env.VITE_BASE_PATH,
