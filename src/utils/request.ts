@@ -1,7 +1,5 @@
-// import AccessWebLog from 'access-web-log'
 import axios, { InternalAxiosRequestConfig, AxiosResponse } from 'axios'
 import { getToken } from './auth'
-// import { getFasterDomain, getEnv, getUrlParam } from 'acg-jsbridge/dist/utils' // 域名竞速
 
 const service = axios.create({
   baseURL: import.meta.env.VITE_GATEWAY + import.meta.env.VITE_API_URL,
@@ -35,12 +33,9 @@ service.interceptors.response.use(
         params: response?.config?.data || response?.config?.params,
         responseObject: JSON.parse(response?.request?.response),
         platformType: 'h5',
-        appId: 'vtn-mpa-h5',
         keyword: 'networkTimingData',
         version: 'grey'
       }
-      // AccessWebLog.logEvent(_logdata)
-      // AccessWebLog.postSomeLog({ isExtend: true })
       // eslint-disable-next-line no-empty
     } catch (error: any) {
       throw new Error(error)

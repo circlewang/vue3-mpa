@@ -2,6 +2,7 @@
 // import { rpx2pix } from './screenSize'
 import WebpInfo from '@/utils/webp'
 import { isIphone } from '@/utils/tool'
+import { PLACE_HOLDER } from '@/utils/const'
 
 const DESIGN_SCREEN_WIDTH = 750
 const DEVICE_SCREEN_WIDTH = window.screen.availWidth ?? 750
@@ -21,9 +22,6 @@ const designPX2Pix = (x: number) => {
   }
   return 0
 }
-
-const PLACE_HOLDER = 'https://img.danchuangglobal.com/resource_h5/static/placeholder.png'
-
 /**
  * 获取oss图片压缩url，针对宽高/质量/格式进行处理
  *
@@ -54,7 +52,7 @@ export const CDNImageForSize = (
     return url
   }
 
-  if (!url.includes('img.danchuangglobal.com')) {
+  if (!url.includes('img.**.com')) {
     return url
   }
   // if (url.match(/.gif/)) {

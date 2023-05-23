@@ -1,10 +1,10 @@
 /*
- * @Author       : 任洪建
- * @Date         : 2021-04-30 16:15:58
- * @LastEditTime: 2023-05-22
+ * @Author: wangmengyuan
+ * @Date: 2023-05-22
  * @LastEditors: wangmengyuan
+ * @LastEditTime: 2023-05-23
  * @FilePath: /vue3-mpa/src/utils/webp.ts
- * @Description  : webp支持性校验
+ * @Description:
  */
 import { saveCacheObject, getCacheObject } from '@/utils/cacheUtil'
 

@@ -14,8 +14,7 @@
 </template>
 <script lang="ts" setup>
 import { CDNImageForSize } from '@/utils/cdnImage'
-
-const PLACE_HOLDER = 'https://static.qingce-tech.com/goodsCenter/2023-4/lazy.png'
+import { PLACE_HOLDER } from '@/utils/const'
 
 interface IProps {
   src?: string
