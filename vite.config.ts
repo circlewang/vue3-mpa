@@ -5,6 +5,7 @@ import Components from 'unplugin-vue-components/vite'
 import { visualizer } from 'rollup-plugin-visualizer' //打包size分析工具
 import compression from 'vite-plugin-compression' //gzip/br 压缩
 import path from 'path'
+import PxToRem from 'postcss-pxtorem'
 
 // 引入多页面配置文件
 import project from './scripts/router.json'
@@ -42,10 +43,10 @@ export default ({ mode }: ConfigEnv): UserConfigExport => {
     plugins: [
       vue(),
       Components({
-        dirs: ['src/components/', 'src/pages'],
+        dirs: ['../components/'],
         extensions: ['vue', 'md'],
         include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
-        dts: path.resolve(__dirname, './src/components.d.ts')
+        dts: '../components.d.ts'
       }),
       AutoImport({
         include: [
@@ -72,6 +73,20 @@ export default ({ mode }: ConfigEnv): UserConfigExport => {
         deleteOriginFile: false // 是否删除源文件
       })
     ],
+    css: {
+      postcss: {
+        plugins: [
+          // px换算成rem
+          PxToRem({
+            rootValue: 75, // 换算的基数(设计图750的根字体为32)
+            selectorBlackList: ['van-'], // 忽略转换正则匹配项
+            propList: ['*'],
+            unitPrecision: 3,
+            unitToConvert: 'px' // (String) 要转换的单位，默认是 px。
+          })
+        ]
+      }
+    },
     resolve: {
       alias: {
         '@': path.join(__dirname, './src')

@@ -1,6 +1,6 @@
 <template>
-  <view class="container" :style="outerStyle" @click="handlePreview">
-    <image
+  <div class="container" :style="outerStyle" @click="handlePrediv">
+    <img
       style="width: 100%; height: 100%"
       :src="cdnImageSrc"
       :lazy-load="lazyLoad"
@@ -9,12 +9,13 @@
       @error="handleError"
       webp
     />
-    <!-- <image v-if="loadError" :src="PLACE_HOLDER" class="placeholder" /> -->
-  </view>
+    <img v-if="loadError" :src="PLACE_HOLDER" class="placeholder" />
+  </div>
 </template>
 <script lang="ts" setup>
 import { CDNImageForSize } from '@/utils/cdnImage'
 import { PLACE_HOLDER } from '@/utils/const'
+import { px2rem } from '@/utils/pageUtil'
 
 interface IProps {
   src?: string
@@ -37,7 +38,7 @@ interface IProps {
     | 'top right'
     | 'bottom left'
     | 'bottom right'
-  preview?: boolean // 是否开启图片预览
+  prediv?: boolean // 是否开启图片预览
   current?: number // 当前图片位于数组中第几张,默认为0
   urls?: string[] // 当前图片所处数组, 不传则默认为 [src]
 }
@@ -48,7 +49,7 @@ const props = withDefaults(defineProps<IProps>(), {
   height: '100%',
   lazyLoad: true,
   mode: 'scaleToFill',
-  preview: false,
+  prediv: false,
   current: 0,
   urls: [] as any
 })
@@ -60,18 +61,14 @@ const outerStyle = computed(() => {
   const style: any = {}
   const { width, height } = props
   if (width !== '100%') {
-    style.width = width + 'rpx'
+    style.width = px2rem(width + 'px')
   } else {
-    // #ifdef MP-WEIXIN
     style.width = '100%'
-    // #endif
   }
   if (height !== '100%') {
-    style.height = height + 'rpx'
+    style.height = px2rem(height + 'px')
   } else {
-    // #ifdef MP-WEIXIN
     style.height = '100%'
-    // #endif
   }
   return style
 })
@@ -98,12 +95,12 @@ const handleError = (e: any) => {
   loadError.value = true
 }
 
-const previewUrls = computed(() => {
+const predivUrls = computed(() => {
   return (props.urls?.length ?? 0) > 0 ? props.urls : [props.src]
 })
 
-const handlePreview = () => {
-  if (props.preview) {
+const handlePrediv = () => {
+  if (props.prediv) {
     console.log('预览')
   }
 }

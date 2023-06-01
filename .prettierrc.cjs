@@ -2,12 +2,12 @@
  * @Author: wangmengyuan
  * @Date: 2023-05-22
  * @LastEditors: wangmengyuan
- * @LastEditTime: 2023-05-22
+ * @LastEditTime: 2023-06-02
  * @FilePath: /vue3-mpa/.prettierrc.cjs
  * @Description:
  */
 module.exports = {
-  printWidth: 140, //一行的字符数，如果超过会进行换行，默认为80
+  printWidth: 120, //一行的字符数，如果超过会进行换行，默认为80
   singleAttributePerLine: false, //每行强制换行，只能使用单个属性
   tabWidth: 2, // 一个 tab 代表几个空格数，默认为 2 个
   useTabs: false, //是否使用 tab 进行缩进，默认为false，表示用空格进行缩减
@@ -16,5 +16,7 @@ module.exports = {
   trailingComma: 'none', // 是否使用尾逗号
   bracketSpacing: true, // 对象大括号直接是否有空格，默认为 true，效果：{ a: 1 }
   endOfLine: 'auto',
-  jsxBracketSameLine: false // 在jsx中把'>' 是否单独放一行
+  jsxBracketSameLine: false, // 在jsx中把'>' 是否单独放一行
+  proseWrap: 'preserve',
+  eslintIntegration: false //不让prettier使用eslint的代码格式进行校验
 }

@@ -2,12 +2,13 @@
  * @Author: wangmengyuan
  * @Date: 2023-05-22
  * @LastEditors: wangmengyuan
- * @LastEditTime: 2023-05-22
+ * @LastEditTime: 2023-06-01
  * @FilePath: /vue3-mpa/scripts/template/index.ts
  * @Description:
  */
 import { createApp } from 'vue'
 import App from './main.vue'
-import '@/plugins/vconsole'
+import '@/global'
+import '@/styles/variables.scss'
 
 createApp(App).mount('#app')

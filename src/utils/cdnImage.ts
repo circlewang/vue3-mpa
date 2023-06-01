@@ -22,6 +22,16 @@ const designPX2Pix = (x: number) => {
   }
   return 0
 }
+
+interface Image {
+  url?: string
+  pxWidth?: number
+  pxHeight?: number
+  cut?: boolean
+  quality?: number
+  format?: string
+  interlace?: number
+}
 /**
  * 获取oss图片压缩url，针对宽高/质量/格式进行处理
  *
@@ -35,15 +45,9 @@ const designPX2Pix = (x: number) => {
  *
  * @return 返回处理后的url
  */
-export const CDNImageForSize = (
-  url: string,
-  pxWidth?: number,
-  pxHeight?: number,
-  cut = false,
-  quality = 100,
-  format = 'webp',
-  interlace = 1
-) => {
+export const CDNImageForSize = (imgInfo: object) => {
+  const { url, pxWidth, pxHeight, cut = false, quality = 100, format = 'webp', interlace = 1 }: Image = imgInfo
+
   if (!url) {
     return PLACE_HOLDER
   }

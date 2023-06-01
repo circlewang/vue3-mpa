@@ -2,7 +2,7 @@
  * @Author: wangmengyuan
  * @Date: 2023-05-22
  * @LastEditors: wangmengyuan
- * @LastEditTime: 2023-05-22
+ * @LastEditTime: 2023-06-02
  * @FilePath: /vue3-mpa/.eslintrc.cjs
  * @Description:
  */
@@ -33,7 +33,9 @@ module.exports = {
   rules: {
     '@typescript-eslint/no-var-requires': 0, //解决报错：Require statement not part of import statement.
     'vue/multi-word-component-names': 'off', //关闭组件命名规则娇艳
-    'prettier/prettier': 'error'
+    'prettier/prettier': 'off',
+    'prefer-const': 'warn', // 如果没改变的话，必须是const
+    'linebreak-style': 'off' // 忽略检测换行风格
   },
   root: true
 }

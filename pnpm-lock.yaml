@@ -1,6 +1,9 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  amfe-flexible:
+    specifier: ^2.2.1
+    version: 2.2.1
   axios:
     specifier: ^1.4.0
     version: registry.npmmirror.com/axios@1.4.0
@@ -45,6 +48,9 @@ devDependencies:
   eslint-plugin-vue:
     specifier: ^9.13.0
     version: registry.npmmirror.com/eslint-plugin-vue@9.13.0(eslint@8.41.0)
+  postcss-pxtorem:
+    specifier: ^6.0.0
+    version: 6.0.0(postcss@8.4.23)
   prettier:
     specifier: ^2.8.8
     version: registry.npmmirror.com/prettier@2.8.8
@@ -293,6 +299,10 @@ packages:
       vue: registry.npmmirror.com/vue@3.3.4
     dev: true
 
+  /amfe-flexible@2.2.1:
+    resolution: {integrity: sha512-L2VfvDzoETBjhRptg5u/IUuzHSuxm22JpSRb404p/TBGeRfwWmmNEbB+TFPIP/sS/+pbM18bCFH9QnMojLuPNw==}
+    dev: false
+
   /esbuild@0.17.19:
     resolution: {integrity: sha512-XQ0jAPFkK/u3LcVRcvVHQcTIqD6E2H1fvZMA5dQPSOWb3suUbWbfbRf94pjc0bNzRYLfIrDRQXr7X+LHIm5oHw==}
     engines: {node: '>=12'}
@@ -344,6 +354,14 @@ packages:
 
   /picocolors@1.0.0:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
+    dev: true
+
+  /postcss-pxtorem@6.0.0(postcss@8.4.23):
+    resolution: {integrity: sha512-ZRXrD7MLLjLk2RNGV6UA4f5Y7gy+a/j1EqjAfp9NdcNYVjUMvg5HTYduTjSkKBkRkfqbg/iKrjMO70V4g1LZeg==}
+    peerDependencies:
+      postcss: ^8.0.0
+    dependencies:
+      postcss: 8.4.23
     dev: true
 
   /postcss@8.4.23:
